@@ -92,8 +92,8 @@ knitr::include_graphics('../images/GUI_install.png')
 > library(devtools)
 > devtools::install_github("NOAA-OCM/SWMPrExtension")
 ```
-Note: You specify the full path after the github.com part of the package URL:
-"https://github.com/NOAA-OCM/SWMPrExtension" becomes "NOAA-OCM/SWMPrExtension"
+Note: You specify the <span style="color:red"> path after the github.com part</span> of the package URL:
+"https://github.com/NOAA-OCM/SWMPrExtension" becomes **"NOAA-OCM/SWMPrExtension"**
 
 
 ## Slide with Plot
