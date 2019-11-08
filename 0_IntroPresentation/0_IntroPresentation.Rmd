@@ -1,0 +1,58 @@
+---
+title: "ANALYZING AND PRESENTING YOUR DATA WITH R"
+author: "Dave Eslinger and Kim Cressman"
+date: "11/18/2019"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Outline
+
+- Introduction & news
+- R and RStudio use and issues
+  - Installing, updating, and alternatives
+- Working with SET data
+- Break
+- Refresher on Status Reports
+- Hacky Hour/Doctor's Office
+
+## Introduction & News
+- Actual introductions!
+- New capability in status report process
+- Fixes to status report software
+
+## R and RStudio
+
+## SWMPrExtension Installation
+<div style= "float:center;position: relative; top: -40px;">
+```{r rstudio, out.width='50%', fig.align='center', out.extra='style="float:right; padding:10px"'}
+
+knitr::include_graphics('../images/GUI_install.png')
+```
+</div>
+
+- With GUI (from CRAN)
+
+## SWMPrExtension Installation
+
+- Manually from CRAN
+```
+> install.packages("SWMPrExtension")
+```
+- Manually from GitHub
+  - Gets any updates not yet pushed to CRAN
+
+```
+> install.packages("devtools")
+> library(devtools)
+> devtools::install_github("NOAA-OCM/SWMPrExtension")
+```
+## Slide with Plot
+
+```{r pressure}
+plot(pressure)
+```
+
