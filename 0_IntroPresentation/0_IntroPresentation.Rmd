@@ -7,6 +7,10 @@ output: ioslides_presentation
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+library(SWMPrExtension)
+path <- '~/GitHub/NERRS_NERRA_2019_R_Training/data'
+qaFlags <- c('0', '3', '5')
+
 ```
 
 ## Outline
@@ -15,19 +19,57 @@ knitr::opts_chunk$set(echo = FALSE)
 - R and RStudio use and issues
   - Installing, updating, and alternatives
 - Working with SET data
+
 - Break
+
 - Refresher on Status Reports
 - Hacky Hour/Doctor's Office
 
 ## Introduction & News
 - Actual introductions!
-- New capability in status report process
-- Fixes to status report software
+
+- New capability in status report process: `free_y` parameter
+```{r box-plot-news, warning=FALSE, out.width='50%', fig.show='hold' }
+df <- import_local(path,'jobjbmet2017')
+df <- qaqc(df, qaqc_keep = qaFlags)
+raw_boxplot(df, param = 'atemp', target_yr = '2017')
+raw_boxplot(df, param = 'atemp', target_yr = '2017', free_y = TRUE)
+#raw_boxplot(df, param = 'bp')
+#raw_boxplot(df, param = 'bp', free_y = TRUE)
+```
+
+- Bug fixes to status report software
+  - Metric flag works correctly
+  - <span style="color:red">Error: Aesthetics must be either length 1 or the same as the data (144): label, fontface</span>
+
 
 ## R and RStudio
+- It is good practice to use the latest version (maybe one behind, but no more)
 
-## SWMPrExtension Installation
-<div style= "float:center;position: relative; top: -40px;">
+- Install **R**, then **RStudio**
+
+- Updates can be out of sync
+
+- After an update, you probably need to reload all packages
+  - Definately for **R**, maybe for **RStudio**
+
+- **Easiest way**: Source the `00_initial_installation.R` script from the `R` subdirectory of your CDMO distribution.
+
+## <span style="color:red">Oh no!  It failed!</span>
+
+Yeah, that happens.
+
+- Run it again
+- Run it again, again
+- *Read* the error message to find the first problem package.
+- For the (modestly) **BOLD**
+  - Make a copy of `00_initial_installation.R` and edit out the offending package name.
+  - Manually run the lines from where that package is loaded to the end of the script *(Dave demos)*
+- For the less bold, but not afraid of tedium
+  - Install the remaining packages one, or perhaps two, at a time
+
+## Package Installation
+<div style= "float:center;position: relative; top: -60px;">
 ```{r rstudio, out.width='50%', fig.align='center', out.extra='style="float:right; padding:10px"'}
 
 knitr::include_graphics('../images/GUI_install.png')
@@ -36,7 +78,7 @@ knitr::include_graphics('../images/GUI_install.png')
 
 - With GUI (from CRAN)
 
-## SWMPrExtension Installation
+## Package Installation
 
 - Manually from CRAN
 ```
@@ -50,9 +92,12 @@ knitr::include_graphics('../images/GUI_install.png')
 > library(devtools)
 > devtools::install_github("NOAA-OCM/SWMPrExtension")
 ```
+Note: You specify the full path after the github.com part of the package URL:
+"https://github.com/NOAA-OCM/SWMPrExtension" becomes "NOAA-OCM/SWMPrExtension"
+
+
 ## Slide with Plot
-
-```{r pressure}
-plot(pressure)
-```
-
+Roses are $\color{red}{\text{beautiful red}}$, 
+violets are $\color{blue}{\text{lovely blue}}$.
+Roses are $\color{red}{\text{beautiful red}}$, 
+violets are $\color{blue}{\text{lovely blue}}$.
