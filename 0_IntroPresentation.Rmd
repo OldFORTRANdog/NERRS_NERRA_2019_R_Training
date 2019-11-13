@@ -96,8 +96,16 @@ Note: You specify the <span style="color:red"> path after the github.com part</s
 "https://github.com/NOAA-OCM/SWMPrExtension" becomes **"NOAA-OCM/SWMPrExtension"**
 
 
-## Slide with Plot
-Roses are $\color{red}{\text{beautiful red}}$, 
-violets are $\color{blue}{\text{lovely blue}}$.
-Roses are $\color{red}{\text{beautiful red}}$, 
-violets are $\color{blue}{\text{lovely blue}}$.
+## RStudio.cloud
+
+If you just don't want to deal with installing locally
+
+- Go to RStudio.cloud
+- Create a free account
+- Open the project ...
+- Save a copy to your own local workspace
+- upload your data
+  - CSV files
+  - Excel spreadsheets
+  - Needed images
+- Run the needed script(s)
