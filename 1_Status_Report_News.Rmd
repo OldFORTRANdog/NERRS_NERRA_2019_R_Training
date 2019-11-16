@@ -21,14 +21,16 @@ qaFlags <- c('0', '3', '5')
 
 That means:
 
-- The **Graphs** all have 0. as their lower value.
-- They all use non-metric units.
-- The text and pictures are all from the old, boiler-plate 2019 product.
+- **Graphs** all scale with 0. as their lowest Y-value.
+- **Graphs** all use non-metric units.
+- The text and pictures are all from the old, boiler-plate 2016 product.
 
 
-Graphs and unites may be a problem, and at least the text needs to be updated.
+Graphs and units *may* be a problem
 
-## What is New: **Graphs** all have 0. as their lower value.
+The text, at least, **must** be updated.
+
+## What is New: Lower Y-value can be "float""
 
 - New flag in Excel spreadsheet to specify how Y-axis scaling should work,
 and the SWMPrExtension package code updated to use the new flag.
@@ -41,6 +43,9 @@ df <- qaqc(df, qaqc_keep = qaFlags)
 raw_boxplot(df, param = 'bp', plot_title = TRUE, target_yr = '2017')
 raw_boxplot(df, param = 'bp', plot_title = TRUE, target_yr = '2017', free_y = TRUE)
 ```
+
+## What is New: Lower Y-value can be "float""
+
 - Bug fixes to `seasonal-dot-plot.R` plot code in SWMPrExtension package fixes bug.
 
 
