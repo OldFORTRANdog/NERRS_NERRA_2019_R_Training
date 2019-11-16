@@ -7,29 +7,41 @@ output: ioslides_presentation
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+library(SWMPrExtension)
+path <- './data'
+qaFlags <- c('0', '3', '5')
+
 ```
 
-## R Markdown
+## SWMP Status Report Update
 
-This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+- 2018 data has been processed and all graphics are available at CDMO:
+  http://cdmo.baruch.sc.edu/waf/nerrs_swamp_status_reports/
+- However, these reports use the old Excel content and R scripts.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+That means:
 
-## Slide with Bullets
+- The **Graphs** all have 0. as their lower value.
+- They all use non-metric units.
+- The text and pictures are all from the old, boiler-plate 2019 product.
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
 
-## Slide with R Output
+Graphs and unites may be a problem, and at least the text needs to be updated.
 
-```{r cars, echo = TRUE}
-summary(cars)
+## What is New: **Graphs** all have 0. as their lower value.
+
+- New flag in Excel spreadsheet to specify how Y-axis scaling should work,
+and the SWMPrExtension package code updated to use the new flag.
+
+```{r box-plot-news, warning=FALSE, out.width='50%', fig.show='hold' }
+df <- import_local(path,'jobjbmet2017')
+df <- qaqc(df, qaqc_keep = qaFlags)
+#raw_boxplot(df, param = 'atemp', plot_title = TRUE, target_yr = '2017')
+#raw_boxplot(df, param = 'atemp', plot_title = TRUE, target_yr = '2017', free_y = TRUE)
+raw_boxplot(df, param = 'bp', plot_title = TRUE, target_yr = '2017')
+raw_boxplot(df, param = 'bp', plot_title = TRUE, target_yr = '2017', free_y = TRUE)
 ```
+- Bug fixes to `seasonal-dot-plot.R` plot code in SWMPrExtension package fixes bug.
 
-## Slide with Plot
 
-```{r pressure}
-plot(pressure)
-```
 

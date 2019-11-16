@@ -8,7 +8,7 @@ output: ioslides_presentation
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 library(SWMPrExtension)
-path <- '~/GitHub/NERRS_NERRA_2019_R_Training/data'
+path <- './data'
 qaFlags <- c('0', '3', '5')
 
 ```
@@ -32,10 +32,10 @@ qaFlags <- c('0', '3', '5')
 ```{r box-plot-news, warning=FALSE, out.width='50%', fig.show='hold' }
 df <- import_local(path,'jobjbmet2017')
 df <- qaqc(df, qaqc_keep = qaFlags)
-raw_boxplot(df, param = 'atemp', target_yr = '2017')
-raw_boxplot(df, param = 'atemp', target_yr = '2017', free_y = TRUE)
-#raw_boxplot(df, param = 'bp')
-#raw_boxplot(df, param = 'bp', free_y = TRUE)
+#raw_boxplot(df, param = 'atemp', plot_title = TRUE, target_yr = '2017')
+#raw_boxplot(df, param = 'atemp', plot_title = TRUE, target_yr = '2017', free_y = TRUE)
+raw_boxplot(df, param = 'bp', plot_title = TRUE, target_yr = '2017')
+raw_boxplot(df, param = 'bp', plot_title = TRUE, target_yr = '2017', free_y = TRUE)
 ```
 
 - Bug fixes to status report software
