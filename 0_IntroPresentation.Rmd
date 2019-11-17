@@ -69,14 +69,16 @@ Yeah, that happens.
   - Install the remaining packages one, or perhaps two, at a time
 
 ## Package Installation
-<div style= "float:center;position: relative; top: -60px;">
-```{r rstudio, out.width='50%', fig.align='center', out.extra='style="float:right; padding:10px"'}
+<div style= "float:center;position: relative; top: -50px;">
+```{r rstudio, out.width='55%', fig.align='right', out.extra='style="float:right; padding:-30px"'}
 
-knitr::include_graphics('../images/GUI_install.png')
+knitr::include_graphics('./images/GUI_install.png')
 ```
 </div>
 
 - With GUI (from CRAN)
+  - Tools/Install Packages
+  - Type package name(s)
 
 ## Package Installation
 
