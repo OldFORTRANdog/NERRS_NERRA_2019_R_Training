@@ -25,17 +25,24 @@ That means:
 - **Graphs** all use non-metric units.
 - The text and pictures are all from the old, boiler-plate 2016 product.
 
+Graphs and units *may* need updating, the text, at least, **must** be updated.
 
-Graphs and units *may* be a problem
-
-The text, at least, **must** be updated.
-
-## What is New: Lower Y-value can be "float""
+## New: Y range determined by data
 
 - New flag in Excel spreadsheet to specify how Y-axis scaling should work,
 and the SWMPrExtension package code updated to use the new flag.
 
-```{r box-plot-news, warning=FALSE, out.width='50%', fig.show='hold' }
+## Negative values work OK,
+```{r box-plot-1, warning=FALSE, out.width='50%', fig.show='hold' }
+df <- import_local(path,'lkspomet2018')
+df <- qaqc(df, qaqc_keep = qaFlags)
+raw_boxplot(df, param = 'atemp', plot_title = TRUE, target_yr = '2018')
+raw_boxplot(df, param = 'atemp', plot_title = TRUE, target_yr = '2018', free_y = FALSE)
+#raw_boxplot(df, param = 'bp', plot_title = TRUE, target_yr = '2017')
+#raw_boxplot(df, param = 'bp', plot_title = TRUE, target_yr = '2017', free_y = TRUE)
+```
+But positive values don't scale well.
+```{r box-plot-news2, warning=FALSE, out.width='50%', fig.show='hold' }
 df <- import_local(path,'jobjbmet2017')
 df <- qaqc(df, qaqc_keep = qaFlags)
 #raw_boxplot(df, param = 'atemp', plot_title = TRUE, target_yr = '2017')
@@ -44,9 +51,9 @@ raw_boxplot(df, param = 'bp', plot_title = TRUE, target_yr = '2017')
 raw_boxplot(df, param = 'bp', plot_title = TRUE, target_yr = '2017', free_y = TRUE)
 ```
 
-## What is New: Lower Y-value can be "float""
+## New: Bug fixes
 
-- Bug fixes to `seasonal-dot-plot.R` plot code in SWMPrExtension package fixes bug.
+- Fixed font error in `seasonal-dot.R` fixed. Only seen in updated R, so this worked previously.
 
 
 
