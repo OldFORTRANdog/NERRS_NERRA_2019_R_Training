@@ -96,7 +96,8 @@ raw_boxplot(df, param = 'atemp', plot_title = TRUE, target_yr = '2018', free_y =
 
 ## Other News: Bug fixes
 
-- Fixed font error in `seasonal-dot.R` that stopped the routine that automatically produced all plots in one swell foop. This error was introduced in a recent R update, so you may note have seen it.
+- Fixed font error in `seasonal-dot.R` that stopped the routine that automatically produced all plots in one swell foop. 
+  - This error was introduced in a recent R update, so you may not have seen it.
 
 - Fixed the conversion to metric units to work for all variables.
 
@@ -106,7 +107,7 @@ raw_boxplot(df, param = 'atemp', plot_title = TRUE, target_yr = '2018', free_y =
 - Modify your **Reserve_Level_Plotting_Variables.xlsx** to add the `Free_Y` parameter
   - It is in the **figure_files** directory of your status report project.
   - Download an example from https://bit.ly/2NSOqH7
-- Download a revised R directory from: 
+- Download a revised R directory from: https://bit.ly/2r0RGqW
   - Unzip it and replace the files in the **R** directory of your status report project.
   
 Hmmm, I think that is it.  Modify your spreadsheets, and go for it!

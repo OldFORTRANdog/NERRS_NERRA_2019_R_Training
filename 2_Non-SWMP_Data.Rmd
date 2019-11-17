@@ -1,7 +1,7 @@
 ---
-title: "SWMPr with Non-SWMP Data"
+title: "INCOMPLETE DRAFT SWMPr with Non-SWMP Data"
 author: "Dave Eslinger and Kim Cressman"
-date: "11/13/2019"
+date: "11/18/2019"
 output: ioslides_presentation
 ---
 
@@ -10,21 +10,21 @@ knitr::opts_chunk$set(echo = FALSE)
 library(SWMPrExtension)
 ```
 
-## What is a SWMPr data object?
-Attributes of a swmpr object include names, row.names, class, station, parameters, qaqc_cols, cens_cols, date_rng, timezone, stamp_class, metabolism (if present), and metab_units (if present).
+## Attributes of a swmpr object include 
 
+ - names, 
+ - row.names, 
+ - class, 
+ - station, 
+ - parameters, 
+ - qaqc_cols, 
+ - cens_cols, 
+ - date_rng, 
+ - timezone, 
+ - stamp_class, 
+ - metabolism (if present), 
+ - and metab_units (if present).
 
-## Why do we care?
-
-- Bullet 1
-- Bullet 2
-- Bullet 3
-
-## How do we create one with non-SWMP data?
-
-```{r cars, echo = TRUE}
-summary(cars)
-```
 
 ## Using SWMPr with the new data
 
